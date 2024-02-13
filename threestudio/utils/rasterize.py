@@ -7,7 +7,7 @@ from threestudio.utils.typing import *
 class NVDiffRasterizerContext:
     def __init__(self, context_type: str, device: torch.device) -> None:
         self.device = device
-        self.ctx = self.initialize_context(context_type, device)
+        self.ctx = self.initialize_context("cuda", device)
 
     def initialize_context(
         self, context_type: str, device: torch.device
