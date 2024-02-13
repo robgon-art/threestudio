@@ -111,12 +111,14 @@ class Mesh:
 
     @property
     def v_tex(self):
+        return None
         if self._v_tex is None:
             self._v_tex, self._t_tex_idx = self._unwrap_uv()
         return self._v_tex
 
     @property
     def t_tex_idx(self):
+        return None
         if self._t_tex_idx is None:
             self._v_tex, self._t_tex_idx = self._unwrap_uv()
         return self._t_tex_idx
@@ -207,6 +209,7 @@ class Mesh:
     def _unwrap_uv(
         self, xatlas_chart_options: dict = {}, xatlas_pack_options: dict = {}
     ):
+        return
         threestudio.info("Using xatlas to perform UV unwrapping, may take a while ...")
 
         import xatlas
@@ -244,6 +247,7 @@ class Mesh:
     def unwrap_uv(
         self, xatlas_chart_options: dict = {}, xatlas_pack_options: dict = {}
     ):
+        return
         self._v_tex, self._t_tex_idx = self._unwrap_uv(
             xatlas_chart_options, xatlas_pack_options
         )
